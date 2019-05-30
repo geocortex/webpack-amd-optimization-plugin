@@ -1,0 +1,21 @@
+{
+  "name": "webpack-amd-optimization-plugin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "build:watch": "tsc -p ./tsconfig.json --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.0.3",
+    "@types/webpack": "4.4.29",
+    "typescript": "^3.4.5",
+    "webpack": "4.29.6"
+  },
+  "peerDependencies": {
+    "webpack": "4.29.6"
+  }
+}

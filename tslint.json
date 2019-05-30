@@ -1,0 +1,106 @@
+{
+    "defaultSeverity": "warning",
+    "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+    "linterOptions": {
+        "exclude": ["**/*.json"]
+    },
+    "rules": {
+        "array-type": [true, "array"],
+        "arrow-return-shorthand": [true, "multiline"],
+        "await-promise": [true, "IPromise", "PromiseLike", "FeatureStream"],
+        "ban": [
+            true,
+            { "name": ["*", "toRgb"], "message": "Use Color.toJSON() instead." },
+            { "name": ["*", "toRgba"], "message": "Use Color.toJSON() instead." },
+            { "name": ["td", "constructor"], "message": "Use createTestDouble instead." }
+        ],
+        "ban-types": [
+            true,
+            ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+            ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+            ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+            ["String", "Avoid using the `String` type. Did you mean `string`?"]
+        ],
+        "completed-docs": [
+            false,
+            {
+                "enums": {
+                    "visibilities": ["exported"]
+                },
+                "functions": {
+                    "visibilities": ["exported"]
+                },
+                "classes": {
+                    "visibilities": ["exported"]
+                },
+                "interfaces": {
+                    "visibilities": ["exported"]
+                },
+                "types": {
+                    "visibilities": ["exported"]
+                },
+                "variables": {
+                    "visibilities": ["exported"],
+                    "tags": { "existence": ["internal"] }
+                },
+                "methods": {
+                    "locations": ["all"],
+                    "privacies": ["public", "protected"],
+                    "tags": { "content": { "see": ".*" }, "existence": ["inheritdoc", "internal"] }
+                },
+                "properties": {
+                    "locations": ["all"],
+                    "privacies": ["public", "protected"],
+                    "tags": { "content": { "see": ".*" }, "existence": ["inheritdoc", "internal"] }
+                }
+            }
+        ],
+        "interface-name": false,
+        "jsx-no-lambda": false,
+        "max-classes-per-file": false,
+        "member-access": [true, "no-public"],
+        "member-ordering": [true, { "order": "fields-first" }],
+        "naming-convention": [
+            true,
+            { "type": "method", "modifiers": "private", "leadingUnderscore": "require" },
+            { "type": "method", "modifiers": "protected", "leadingUnderscore": "require" },
+            { "type": "property", "modifiers": "private", "leadingUnderscore": "require" },
+            { "type": "property", "modifiers": "protected", "leadingUnderscore": "require" }
+        ],
+        "no-default-export": true,
+        "no-empty": false,
+        "no-empty-interface": false,
+        "no-floating-promises": true,
+        "no-for-in-array": true,
+        "no-inferrable-types": [true, "ignore-params"],
+        "no-implicit-dependencies": false,
+        "no-inferred-empty-object-type": false,
+        "no-invalid-this": true,
+        "no-null-keyword": false,
+        "no-parameter-properties": true,
+        "no-redundant-jsdoc": true,
+        "no-require-imports": true,
+        "no-shadowed-variable": false,
+        "no-string-literal": false,
+        "no-submodule-imports": false,
+        "no-switch-case-fall-through": true,
+        "no-unnecessary-callback-wrapper": true,
+        "no-unnecessary-type-assertion": true,
+        "no-unused-expression": false,
+        "no-unused-expression-chai": true,
+        "object-literal-sort-keys": false,
+        "ordered-imports": [
+            true,
+            {
+                "grouped-imports": true
+            }
+        ],
+        "prefer-conditional-expression": false,
+        "prefer-readonly": true,
+        "prefer-template": true,
+        "triple-equals": [true, "allow-null-check", "allow-undefined-check"],
+        "type-literal-delimiter": true,
+        "typedef": [true, "call-signature", "parameter"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
+    },
+}
