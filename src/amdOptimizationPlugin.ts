@@ -7,6 +7,7 @@ import AmdMainTemplatePluginHook from "./AmdMainTemplatePluginHook";
 import JavascriptGeneratorHook from "./JavascriptGeneratorHook";
 import JavascriptModulesPluginHook from "./JavascriptModulesPluginHook";
 import ModuleDependencyTemplateAsId from "./ModuleDependencyTemplateAsId";
+import HarmonyImportSpecifierDependencyTemplateHook from "./HarmonyImportSpecifierDependencyTemplate";
 
 type PluginOptions = {};
 
@@ -33,6 +34,7 @@ export default class AmdOptimizationPlugin {
           "AmdOptimizationPlugin",
           () => {
             new ModuleDependencyTemplateAsId().apply(compilation);
+            new HarmonyImportSpecifierDependencyTemplateHook().apply(compilation);
 
             // patch javascript generator
             new JavascriptGeneratorHook().apply(
